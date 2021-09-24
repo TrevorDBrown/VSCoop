@@ -1,0 +1,73 @@
+{
+  "name": "vscoop",
+	"displayName": "VSCoop",
+	"description": "A scriptable scratchpad for developers using VSCode.",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscoop.testCommand",
+				"title": "VSCoop: Test Command"
+			},
+			{
+				"command": "vscoop.createNewScript",
+				"title": "VSCoop: Create New Script"
+			},
+			{
+				"command": "vscoop.importScript",
+				"title": "VScoop: Import Script"
+			},
+			{
+				"command": "vscoop.exportScript",
+				"title": "VSCoop: Export Script(s)"
+			},
+			{
+				"command": "vscoop.reloadScripts",
+				"title": "VSCoop: Reload Scripts"
+			},
+			{
+				"command": "vscoop.executeScript",
+				"title": "VSCoop: Execute Script"
+			},
+			{
+				"command": "vscoop.deleteScript",
+				"title": "VSCoop: Delete Script"
+			},
+			{
+				"command": "vscoop.cloneScript",
+				"title": "VSCoop: Clone Existing Script"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.60.0",
+		"@types/glob": "^7.1.4",
+		"@types/mocha": "^9.0.0",
+		"@types/node": "14.x",
+		"@typescript-eslint/eslint-plugin": "^4.31.1",
+		"@typescript-eslint/parser": "^4.31.1",
+		"eslint": "^7.32.0",
+		"glob": "^7.1.7",
+		"mocha": "^9.1.1",
+		"typescript": "^4.4.3",
+		"@vscode/test-electron": "^1.6.2"
+	}
+}
